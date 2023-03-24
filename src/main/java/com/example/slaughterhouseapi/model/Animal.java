@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long registration_number;
     private LocalDate date;
     private float weight;
     private String origin;
@@ -26,8 +26,8 @@ public class Animal {
         this.origin = origin;
     }
 
-    public long getId(){
-        return id;
+    public long getRegistrationNumber(){
+        return registration_number;
     }
 
     public void setDate(LocalDate date){
@@ -55,9 +55,16 @@ public class Animal {
     }
 
 
-    public void setId(long id) {
-        this.id = id;
+    public void setRegistrationNumber(long registrationNumber) {
+        this.registration_number = registrationNumber;
     }
 
-
+    public String toString() {
+        return "Animal{" +
+                "registrationNumber=" + registration_number +
+                ", date=" + date +
+                ", weight=" + weight +
+                ", origin='" + origin + '\'' +
+                '}';
+    }
 }
